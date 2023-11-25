@@ -113,9 +113,18 @@
                 }
              }
         }
-             
      }
  
+     public void onMainTriangleFillButtonClick() {
+
+        for (int r = 0; r < colorArray.length; r++) {
+            for (int c = 0; c <= r && c < colorArray[r].length; c++) {
+                colorArray[r][c] = true;
+                gui.update(colorArray);
+            }
+        }
+
+     }
  
  //This is for problem #11
  /** Fills in a grid row from left to right. */
