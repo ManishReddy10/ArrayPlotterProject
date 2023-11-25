@@ -95,6 +95,14 @@
         }
      }
  
+     public void onReverseColMajorFillButtonClick() {
+        for (int c = colorArray[0].length - 1; c >= 0; c--) {
+            for (int r = colorArray.length - 1; r >= 0; r--) {
+                colorArray[r][c] = true;
+                gui.update(colorArray);
+            }
+        }
+     }
  
  
  //This is for problem #11
