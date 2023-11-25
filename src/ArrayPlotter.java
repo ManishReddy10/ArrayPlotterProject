@@ -103,6 +103,18 @@
             }
         }
      }
+
+     public void onMainDiagonalFillButtonClick() {
+        for (int r = 0; r < colorArray.length; r++) {
+            for (int c = 0; c < colorArray[0].length; c++) {
+                if (r == c) {
+                    colorArray[r][c] = true;
+                    gui.update(colorArray);
+                }
+             }
+        }
+             
+     }
  
  
  //This is for problem #11
