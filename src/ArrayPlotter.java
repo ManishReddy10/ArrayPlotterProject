@@ -77,6 +77,15 @@
              }
      }
  //make new methods below here and do other fills
+     public void onColMajorFillButtonClick() {
+        for (int c = 0; c < colorArray[0].length; c++) {
+            for (int r = 0; r < colorArray.length; r++) {
+                colorArray[r][c] = true;
+                gui.update(colorArray);
+            }
+        }
+     }
+
      public void onReverseRowMajorFillButtonClick() {
         for (int r = colorArray.length-1; r >= 0; r--) {
             for (int c = colorArray[r].length-1; c >= 0; c--) {
