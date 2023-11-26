@@ -125,7 +125,37 @@
         }
 
      }
- 
+
+     
+    public void onOtherDiagonalFillButtonClick() {
+        int r = 0;
+        int c = colorArray[0].length-1;
+        for (int i = 0; i < colorArray[0].length && i < colorArray.length; i++) {
+            colorArray[r][c] = true;
+            gui.update(colorArray);
+
+            r++;
+            c--;
+        }
+    }     
+
+    public void onOtherTriangleFillButtonClick() {
+        int columnsFillBorder;
+
+        for (int r = 0; r <  colorArray.length; r++) {
+        
+            columnsFillBorder = colorArray[r].length - 1 - r;
+        
+            for (int c = colorArray[0].length-1; c >= columnsFillBorder && c >=0; c--) {
+        
+                colorArray[r][c] = true;
+                gui.update(colorArray);
+        
+            }
+        }
+
+     }
+
  //This is for problem #11
  /** Fills in a grid row from left to right. */
      private void fillRowLeftToRight(boolean[] row)
@@ -140,8 +170,7 @@
      /** Fills in a grid row from left to right. */
      private void fillRowRightToLeft(boolean[] row)
      {
-         for (int r = row.length - 1; r >= 0; r--)
-         {
+         for (int r = row.length - 1; r >= 0; r--){
              row[r] = true;
              gui.update(colorArray);
          }
