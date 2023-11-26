@@ -197,7 +197,16 @@
              gui.update(colorArray);
          }
      }
- 
+     
+    public void onSerpentineFillButtonClick() {
+        for (int i = 0; i < colorArray.length; i++) {
+            if (i % 2 == 0) {
+                fillRowLeftToRight(colorArray[i]);
+            } else {
+                fillRowRightToLeft(colorArray[i]);
+            }
+        }
+    }
        /** main method that creates the grid plotter application. */
      public static void main(String[] args)
     {
