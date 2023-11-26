@@ -207,6 +207,40 @@
             }
         }
     }
+
+    public void onBorderFillButtonClick() {
+
+        for (int c = 0, r = 0; c < colorArray[0].length; c++) {
+            colorArray[r][c] = true;
+            gui.update(colorArray);
+        }
+
+        if (colorArray.length != 1) {
+            for (int c = colorArray[0].length - 1, r = 1; r < colorArray.length; r++) {
+                colorArray[r][c] = true;
+                gui.update(colorArray);
+            }
+
+            if (colorArray[0].length != 1) {
+                for (int c = colorArray[0].length - 2, r = colorArray.length - 1; c >= 0; c--) {
+                    colorArray[r][c] = true;
+                    gui.update(colorArray);
+                }
+
+                for (int c = 0, r = colorArray.length - 2; r > 0; r--) {
+                    colorArray[r][c] = true;
+                    gui.update(colorArray);
+                }
+            }
+
+            
+        }
+        
+
+        
+
+        
+    }
        /** main method that creates the grid plotter application. */
      public static void main(String[] args)
     {
