@@ -155,6 +155,28 @@
         }
 
      }
+    
+     public void onXFillButtonClick() {
+
+        for (int r = 0; r < colorArray.length; r++) {
+            for (int c = 0; c < colorArray[0].length; c++) {
+                if (r == c) {
+                    colorArray[r][c] = true;
+                    gui.update(colorArray);
+                }
+             }
+        }
+
+        for (int i = 0, r = 0, c = colorArray[0].length-1; i < colorArray[0].length && i < colorArray.length; i++) {
+            colorArray[r][c] = true;
+            gui.update(colorArray);
+
+            r++;
+            c--;
+        }
+
+        
+     }
 
  //This is for problem #11
  /** Fills in a grid row from left to right. */
